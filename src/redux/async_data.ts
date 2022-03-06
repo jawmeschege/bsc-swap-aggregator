@@ -30,7 +30,7 @@ export const asyncData = {
       const ethUsdPrice = await coinbaseApi.getEthUsdPrice();
       dispatch(actions.updateEthUsdPrice(ethUsdPrice));
     } catch (e) {
-      const errorMessage = 'Error fetching BNB/ACA price';
+      const errorMessage = 'Error fetching ETH/USD price';
       errorFlasher.flashNewErrorMessage(dispatch, errorMessage);
       dispatch(actions.updateEthUsdPrice(BIG_NUMBER_ZERO));
       dispatch(actions.updateBaseCurrency(BaseCurrency.ETH));
@@ -49,23 +49,23 @@ export const asyncData = {
         actions.setAvailableTokens(
           (tokenList as TokenList).tokens
             .filter(t => t.chainId === chainId)
-            .concat(ETH_TOKEN),
+            // .concat(ETH_TOKEN),
         ),
       );
       return;
     }
 
     try {
-      const response = await fetch((tokenList as string) || defaultTokenList);
-      if (response.status === 200) {
-        const tokenListResponse = (await response.json()) as TokenList;
-        const tokens = tokenListResponse.tokens
+      // const response = await fetch((tokenList as string) || defaultTokenList);
+      // if (response.status === 200) {
+        // const tokenListResponse = (await response.json()) as TokenList;
+        const tokens = defaultTokenList.tokens
           .filter(t => t.chainId === chainId)
-          .concat(ETH_TOKEN);
+          // .concat(ETH_TOKEN);
         dispatch(actions.setAvailableTokens(tokens));
-      } else {
-        throw new Error('Error fetching token list');
-      }
+      // } else {
+      //   throw new Error('Error fetching token list');
+      // }
     } catch (e) {
       const errorMessage = 'Could not find any tokens';
       errorFlasher.flashNewErrorMessage(dispatch, errorMessage);

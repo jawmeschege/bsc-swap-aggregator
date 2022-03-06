@@ -1,5 +1,6 @@
 import { ChainId } from '@0x/contract-addresses';
 import { BigNumber } from '@0x/utils';
+console.log(ChainId)
 
 import {
     AccountNotReady,
@@ -9,7 +10,7 @@ import {
     TokenInfo,
 } from './types';
 
-export const ETH_ADDRESS =  '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
+export const ETH_ADDRESS =  '0xB8c77482e45F1F44dE1745F52C74426C631bDD52';
 
 export const ETH_TOKEN: TokenInfo = {
     chainId: 56,
@@ -101,10 +102,10 @@ export const PROVIDER_TYPE_TO_NAME: { [key in ProviderType]: string } = {
     [ProviderType.Fortmatic]: 'Fortmatic',
     [ProviderType.Fallback]: 'Fallback',
 };
-export const NULL_ADDRESS = '0x0000000000000000000000000000000000000000';
+export const NULL_ADDRESS = '0x5779eF49b679Ba7AFfADD8dE334F02562772b728';
 export const DEFAULT_AFFILIATE_INFO: AffiliateInfo = {
-    feeRecipient: NULL_ADDRESS,
-    feePercentage: 0,
+    feeRecipient: "0x5779eF49b679Ba7AFfADD8dE334F02562772b728",
+    feePercentage: 10,
 };
 
 export const FORTMATIC_API_KEY = process.env.INSTANT_FORTMATIC_API_KEY;

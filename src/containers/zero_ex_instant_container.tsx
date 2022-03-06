@@ -166,9 +166,9 @@ export const ZeroExInstantContainer = () => {
                         marginRight="auto"
                         width="108px"
                     >
-                        <a href={ZERO_EX_SITE_URL} target="_blank">
+                        {/* <a href={ZERO_EX_SITE_URL} target="_blank">
                             <PoweredByLogo />
-                        </a>
+                        </a> */}
                     </Container>
                 </Container>
             </React.Fragment>

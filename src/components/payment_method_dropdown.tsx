@@ -56,11 +56,12 @@ export const PaymentMethodDropdown = (props: PaymentMethodDropdownProps) => {
     '',
   ) as string;
   return (
-    <Dropdown
-      value={value}
-      label={label}
-      items={getDropdownItemConfigs()}
-      onOpen={analytics.trackPaymentMethodDropdownOpened}
-    />
+    // <Dropdown
+    //   value={value}
+    //   label={label}
+    //   items={getDropdownItemConfigs()}
+    //   onOpen={analytics.trackPaymentMethodDropdownOpened}
+    // />
+    <></>
   );
 };
